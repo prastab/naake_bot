@@ -19,8 +19,23 @@ function readyDiscord(){
     console.log('tada');
 }
 
+
 function gotMessage(msg){
     console.log(msg.content);
+    if(msg.content.includes("wish gar") ){
+        const mention = msg.mentions.users.first();
+        
+        console.log(mention);
+        msg.channel.send(`${mention}, Happy Birthday 🎉🥳 `)
+    }
+    if(msg.content.includes("naake spam") ){
+        const mention = msg.mentions.users.first();
+        
+        console.log(mention);
+        for(let i = 0 ; i < 100;i++){
+        msg.channel.send(`${mention}`);
+        }
+    }
     if(msg.content.toLowerCase() === "naake" ){
         msg.reply("tero bhanda thulai xa")
     }else if (msg.content.includes("oe naake")){
